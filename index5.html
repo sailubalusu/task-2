@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #09121b;
+            padding: 10px 0;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #09121b;
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Form & Table styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-reset {
+            background-color: #f44336;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        /* Test page styling */
+        .question-block {
+            margin-bottom: 20px;
+        }
+
+        .options-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .options-group label {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .options-group label:hover {
+            background-color: #e9e9e9;
+        }
+
+        /* Hide all sections initially */
+        .page-section {
+            display: none;
+        }
+
+        /* Show active section */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Login</a>
+                <div class="dropdown-content">
+                    <a href="#">Student Login</a>
+                    <a href="#">Admin Login</a>
+                </div>
+            </li>
+            <li><a href="#" onclick="showSection('registration')">Registration Process</a></li>
+            <li><a href="#" onclick="showSection('tests')">Tests</a></li>
+            <li><a href="#" onclick="showSection('results')">Results</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="container page-section active">
+        <h1>OUR VISION</h1>
+        <p>Create high-quality engineering professionals through research, innovation and teamwork for data science services with outstanding faculty, facilities and education.</p>
+        <h1>OUR MISSION</h1>
+        <p>M1: Provide skills, knowledge and attitude for successful information technologists.</p>
+        <p>M2: Enhance overall personality with innovative thinking, teamwork, entrepreneur skills, communication skills, employability skills and ethical conduct.</p>
+        <p>M3: Effective teaching–learning process with in-depth interdisciplinary knowledge.</p>
+        <p>M4: Industry interactions through consultancy and sponsored research for societal needs.</p>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="registration" class="container page-section">
+        <h2>Registration Process</h2>
+        <form>
+            <div class="form-group"><label>Course Code:</label><input type="text"></div>
+            <div class="form-group"><label>Course Name:</label><input type="text"></div>
+            <div class="form-group"><label>Duration:</label><input type="text"></div>
+            <div class="form-group"><label>Roll Number:</label><input type="text"></div>
+            <div class="form-group"><label>Year:</label><input type="text"></div>
+            <div class="form-group"><label>Sem:</label><input type="text"></div>
+            <div class="form-group"><label>Regulation:</label><input type="text"></div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Tests Page -->
+    <div id="tests" class="container page-section">
+        <h2>Answer all questions</h2>
+        <form>
+            <div class="question-block">
+                <h3>1. Who is making the web standards?</h3>
+                <div class="options-group">
+                    <label><input type="radio" name="q1"> World Wide Web Consortium</label>
+                    <label><input type="radio" name="q1"> Google</label>
+                    <label><input type="radio" name="q1"> Microsoft</label>
+                    <label><input type="radio" name="q1"> Mozilla</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <h3>2. Which property is used to change the background color?</h3>
+                <div class="options-group">
+                    <label><input type="radio" name="q2"> background-color</label>
+                    <label><input type="radio" name="q2"> color</label>
+                    <label><input type="radio" name="q2"> bgcolor</label>
+                    <label><input type="radio" name="q2"> bkcolor</label>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Results Page -->
+    <div id="results" class="container page-section">
+        <h2>Results</h2>
+        <form>
+            <div class="form-group"><label>Roll No:</label><input type="text"></div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+        </form>
+        <h3>Results Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th><th>Course Code</th><th>Course Name</th><th>Grade Point</th><th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>CS101</td><td>Introduction to Programming</td><td>9</td><td>4</td></tr>
+                <tr><td>2</td><td>MA202</td><td>Advanced Calculus</td><td>8</td><td>3</td></tr>
+                <tr><td>3</td><td>WT402</td><td>Web Technologies</td><td>9</td><td>4</td></tr>
+            </tbody>
+        </table>
+        <p><strong>SGPA:</strong> 8.4</p>
+        <p><strong>CGPA:</strong> 8.6</p>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
